@@ -15,7 +15,8 @@ public class MyApplication extends Application {
         super.onCreate();
         DATABASE_HELPER = new DatabaseHelper(this);
         if (checkConnection()){
-            //TODO: async downloading
+            DaemonAsyncTask daemonAsyncTask = new DaemonAsyncTask();
+            daemonAsyncTask.execute();
         }
     }
 
